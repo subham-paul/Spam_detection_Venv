@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: url('https://tse4.mm.bing.net/th/id/OIP.lwzRN4WGhPpRr8K45Y5BgAHaE8?pid=Api&P=0&h=180') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+  }
+</style>
+
+<div style="display: flex; justify-content: center; align-items: flex-start; gap: 30px; flex-wrap: wrap; margin: 60px auto; max-width: 1000px; padding: 25px; 
+            background: rgba(0,0,0,0.8); border-radius: 15px; color: #fff; box-shadow: 0 4px 20px rgba(255,255,0,0.3);">
+
+  <!-- Result Table -->
+  <div style="flex: 1; min-width: 300px; background: rgba(20,20,20,0.9); padding: 25px; border-radius: 10px; text-align: center;">
+    <h2 style="color: #ffcc00;">Spam Detection Result</h2>
+    <p style="color: #bbb;">Your message was analyzed by three Machine Learning models.</p>
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <tr style="background: #ffcc00; color: #000;">
+        <th style="padding: 10px;">Model</th>
+        <th style="padding: 10px;">Prediction</th>
+      </tr>
+
+      {% for model, prediction in result.items() %}
+      {% if model == 'Overall Result (Majority Vote)' %}
+      <tr style="background: #333; font-weight: bold;">
+        <td style="padding: 10px;">{{ model }}</td>
+        {% if prediction == 'Spam' %}
+        <td style="padding: 10px; color: red;">{{ prediction }}</td>
+        {% else %}
+        <td style="padding: 10px; color: #00ff88;">{{ prediction }}</td>
+        {% endif %}
+      </tr>
+      {% else %}
+      <tr style="background: #222;">
+        <td style="padding: 10px; border-bottom: 1px solid #444;">{{ model }}</td>
+        {% if prediction == 'Spam' %}
+        <td style="padding: 10px; border-bottom: 1px solid #444; color: red;">{{ prediction }}</td>
+        {% else %}
+        <td style="padding: 10px; border-bottom: 1px solid #444; color: #00ff88;">{{ prediction }}</td>
+        {% endif %}
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+
+    <div style="margin-top: 25px;">
+      <a href="{{ url_for('form') }}" style="display:inline-block; padding:10px 20px; background:#ffcc00; color:#000; text-decoration:none; border-radius:6px; font-weight:bold; margin-right:10px;">Submit Another</a>
+      <a href="{{ url_for('home') }}" style="display:inline-block; padding:10px 20px; background:#00ff88; color:#000; text-decoration:none; border-radius:6px; font-weight:bold;">Go Home</a>
+    </div>
+  </div>
+
+  <!-- Pie Chart Section -->
+  <div style="flex: 1; min-width: 300px; text-align: center;">
+    <h3 style="color: #ffcc00;">Model Prediction Chart</h3>
+    <img src="{{ url_for('static', filename='chart.png') }}" alt="Prediction Chart" 
+         style="width: 100%; max-width: 400px; border-radius: 10px; margin-top: 15px; 
+                box-shadow: 0 4px 15px rgba(255,255,0,0.3);">
+  </div>
+
+</div>
+
+{% endblock %}

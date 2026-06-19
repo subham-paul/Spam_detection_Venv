@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Spam Detection Project{% endblock %}</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9fafc;
+    }
+
+   /* ===== Navbar Styling ===== */
+.custom-navbar {
+    background-color: #000000;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    margin-left: 15px;
+    transition: 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
+  }
+
+  .navbar-toggler {
+    background-color: #FFD700;
+  }
+
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+
+
+    /* Footer */
+footer {
+  background-color: #FFC107; /* same yellow as your card border */
+  color: #000000;
+  font-weight: 600;
+  padding: 60px 0;
+}
+
+/* Footer Headings */
+footer h5 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Footer Links */
+footer a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: #222222;
+  text-decoration: underline;
+}
+
+/* Newsletter Input + Button */
+footer .form-control {
+  border: 2px solid #000;
+  border-radius: 6px;
+}
+
+footer .btn {
+  background-color: #000000;
+  color: #FFC107;
+  border: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+footer .btn:hover {
+  background-color: #222222;
+}
+
+/* Social Icons */
+footer .social-icons a {
+  color: #000000;
+  font-size: 22px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+footer .social-icons a:hover {
+  transform: scale(1.2);
+  color: #222222;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar py-3">
+  <div class="container">
+    <!-- ===== Logo + Brand Name ===== -->
+    <a class="navbar-brand fw-bold d-flex align-items-center text-warning" href="{{ url_for('home') }}">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYyRhhbZR5Iu6lOe1TvuULmfsW0hGWIBSWnQ&s"
+           alt="Logo"
+           width="40" height="40"
+           class="me-2 rounded-circle border border-warning shadow-sm">
+      Message Spam Detection
+    </a>
+
+    <!-- ===== Navbar Toggler ===== -->
+    <button class="navbar-toggler text-warning border-warning" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- ===== Navbar Links ===== -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active text-warning" href="{{ url_for('home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-warning" href="{{ url_for('about') }}">About</a></li>
+        <li class="nav-item"><a class="nav-link text-warning" href="{{ url_for('contact') }}">Contact</a></li>
+        <li class="nav-item"><a class="nav-link text-warning" href="{{ url_for('form') }}">Form</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Content -->
+  <div class="container my-5">
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- Footer -->
+ <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Programs</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Corporate</a></li>
+          <li><a href="#">One to One</a></li>
+          <li><a href="#">Consulting</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Service</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Training</a></li>
+          <li><a href="#">Coaching</a></li>
+          <li><a href="#">Consulting</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Contact</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Newsletter</h5>
+        <form>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="Email Address">
+            <button class="btn" type="submit">Subscribe</button>
+          </div>
+        </form>
+        <div class="social-icons mt-3">
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+        </div>
+        <p class="mt-3 mb-0">
+          <i class="bi bi-phone-fill"></i> Mobile: <b>+91 7892474250</b><br>
+          <i class="bi bi-envelope-fill"></i> Email: <b>spamdetection@gmail.com</b>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</body>
+</html>

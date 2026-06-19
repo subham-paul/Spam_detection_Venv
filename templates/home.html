@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block title %}Home | Spam Detection{% endblock %}
+
+{% block content %}
+
+<style>
+  body {
+    background-color: #000 !important;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.4);
+    transform: scale(1.03);
+    transition: 0.3s ease;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+  }
+
+  a.btn-warning, a.btn-outline-warning {
+    transition: 0.3s ease-in-out;
+  }
+
+  a.btn-warning:hover {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  a.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  /* Hero fix */
+  section.position-relative.text-center {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  section.position-relative.text-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Testimonials */
+  .testimonial-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffc107;
+  }
+</style>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="position-relative text-center">
+  <img src="https://i.pinimg.com/originals/bf/fc/bb/bffcbb3c0a5f66158141ae3e6c89bf11.jpg"
+       alt="Spam Detection Banner"
+       style="filter: brightness(0.35) hue-rotate(200deg);">
+  <div class="position-absolute top-50 start-50 translate-middle text-warning">
+    <h1 class="fw-bold display-4 text-uppercase">Spam Detection System</h1>
+    <p class="lead mt-3 text-light">Detect and prevent spam messages using AI and Natural Language Processing.</p>
+    <a href="{{ url_for('form') }}" class="btn btn-warning fw-semibold mt-3 px-4 py-2 shadow">
+      🚀 Try Now
+    </a>
+  </div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="container-fluid py-5" style="background-color: #000;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <!-- ✅ Fixed logo: kept original color, same size, moved right -->
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYyRhhbZR5Iu6lOe1TvuULmfsW0hGWIBSWnQ&s"
+             class="img-fluid rounded shadow-lg"
+             alt="About AI"
+             style="margin-left: 100px;">
+      </div>
+      <div class="col-md-6 text-light">
+        <h2 class="fw-bold text-warning mb-3">About the Project</h2>
+        <p class="fs-5">
+          Our <b>Spam Detection System</b> uses advanced <b>Machine Learning</b> and 
+          <b>Natural Language Processing (NLP)</b> algorithms to distinguish between spam 
+          and legitimate messages. It’s designed for <span class="text-warning">speed, privacy, and accuracy</span>,
+          and continuously evolves with AI automation to deliver top-tier security.
+        </p>
+        <a href="{{ url_for('about') }}" class="btn btn-outline-warning fw-semibold mt-3 px-4 py-2">
+          Learn More →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURE / CARD SECTION ===== -->
+<section class="py-5" style="background-color:#050505;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 text-warning text-uppercase">Our Key Features</h2>
+    <div class="row justify-content-center g-4">
+
+      <div class="col-md-4 col-sm-10">
+        <div class="card h-100 border-0 shadow-lg text-light bg-black hover-glow">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.prDCfdWcN7Gzr_UynBv_VAHaFE?pid=Api&P=0&h=180"
+               class="card-img-top"
+               alt="Machine Learning">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-warning">Machine Learning</h5>
+            <p class="card-text text-secondary">Smart models classify messages with precision and continuous learning.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-10">
+        <div class="card h-100 border-0 shadow-lg text-light bg-black hover-glow">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.O23aYC1QAg02fvgcJ7dmxgHaEK?pid=Api&P=0&h=180"
+               class="card-img-top"
+               alt="Artificial Intelligence">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-warning">Artificial Intelligence</h5>
+            <p class="card-text text-secondary">Self-learning AI adapts to new spam patterns for real-time protection.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-10">
+        <div class="card h-100 border-0 shadow-lg text-light bg-black hover-glow">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.1rmMgNRUpWTwgTz8b5Hi_AHaEK?pid=Api&P=0&h=180"
+               class="card-img-top"
+               alt="Data Security">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-warning">Data Security</h5>
+            <p class="card-text text-secondary">End-to-end encrypted design ensures your privacy and safe data handling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIAL SECTION ===== -->
+<section class="container-fluid py-5" style="background-color:#000;">
+  <h2 class="text-center fw-bold mb-5 text-warning text-uppercase">What Our Users Say</h2>
+  <div class="row justify-content-center g-4">
+
+    <div class="col-md-4">
+      <div class="card bg-black border border-warning shadow-lg text-center text-light p-4 hover-glow">
+        <img src="https://media.istockphoto.com/id/1163294201/photo/smiling-confident-businesswoman-posing-with-arms-folded.jpg?s=612x612&w=0&k=20&c=9SY62tujbyx46_NbVH6pYAauliGvM0ixcaEfup9y_kU=" class="testimonial-img mx-auto mb-3" alt="User 1">
+        <h5 class="fw-bold text-warning">Priya Tiwari</h5>
+        <p class="text-secondary fst-italic">“This spam detector saved my inbox! Fast, accurate, and beautifully designed.”</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-black border border-warning shadow-lg text-center text-light p-4 hover-glow">
+        <img src="https://t3.ftcdn.net/jpg/06/11/29/72/360_F_611297254_iqTIPj1nd2mAR58ZRQnFU3jOWkqhhra0.jpg" class="testimonial-img mx-auto mb-3" alt="User 2">
+        <h5 class="fw-bold text-warning">Riya Roy</h5>
+        <p class="text-secondary fst-italic">“Best AI-powered spam detection system — simple UI with powerful results.”</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card bg-black border border-warning shadow-lg text-center text-light p-4 hover-glow">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_-aEGru5C_urunozdfaEbNdoWhd08AGHClA&s" class="testimonial-img mx-auto mb-3" alt="User 3">
+        <h5 class="fw-bold text-warning">Monali Thakur</h5>
+        <p class="text-secondary fst-italic">“Amazing experience! The model accuracy and privacy are top-notch.”</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

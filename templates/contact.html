@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}Contact | Spam Detection{% endblock %}
+
+{% block content %}
+
+<!-- ===== GLOBAL DARK STYLES ===== -->
+<style>
+  html, body {
+    background-color: #000 !important;
+    color: #fff !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  section, .container, .row, .col, .p-4, .p-5 {
+    background-color: transparent !important;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.4);
+    transform: scale(1.03);
+    transition: 0.3s ease;
+  }
+
+  .form-control {
+    background-color: #111;
+    border: 1px solid #ffc107;
+    color: #fff;
+  }
+
+  .form-control:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.4);
+  }
+
+  .btn-warning:hover {
+    background-color: #ffd700 !important;
+    color: #000 !important;
+  }
+</style>
+
+<!-- ===== Banner Section ===== -->
+<section class="position-relative text-center">
+  <img src="https://www.shutterstock.com/image-illustration/yellow-telephone-envelope-letter-email-600nw-1633275730.jpg"
+       class="img-fluid w-100"
+       alt="Contact Banner"
+       style="height: 350px; object-fit: cover;"> <!-- 🔹 filter removed -->
+  <div class="position-absolute top-50 start-50 translate-middle text-white" 
+       style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">
+    <h1 class="fw-bold display-5">Get in Touch</h1>
+    <p class="lead">We’d love to hear from you — reach out anytime!</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT INFO + MAP SECTION ===== -->
+<section class="py-5" style="background-color:#000;">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      
+      <!-- Left: Contact Info -->
+      <div class="col-md-6 d-flex">
+        <div class="p-4 rounded-4 shadow-lg border border-warning flex-fill bg-black">
+          <h2 class="fw-bold text-warning mb-3">Get in Touch</h2>
+          <p class="text-secondary mb-4">If you have any questions or feedback, feel free to reach out to us.</p>
+          <ul class="list-unstyled fs-5">
+            <li class="mb-3">
+              <i class="bi bi-envelope text-warning me-2"></i>
+              spamdetection@gmail.com
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-telephone text-warning me-2"></i>
+              +91 9876543210
+            </li>
+            <li>
+              <i class="bi bi-geo-alt text-warning me-2"></i>
+              Kolkata, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="col-md-6 d-flex">
+        <div class="p-4 rounded-4 shadow-lg border border-warning flex-fill bg-black">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.256541774663!2d88.36389527507594!3d22.59851783147667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02771236c9f1f3%3A0x4ec4b6f61c4f977f!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1697043980477!5m2!1sen!2sin"
+            width="100%" height="320" style="border:0; border-radius:10px; filter:brightness(0.8);" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT FORM SECTION ===== -->
+<section class="py-5" style="background-color:#000;">
+  <div class="container">
+    <div class="p-5 rounded-4 shadow-lg border border-warning bg-black">
+      <h2 class="fw-bold text-center text-warning mb-4 text-uppercase">Send Us a Message</h2>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="name" class="form-label fw-semibold text-light">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label fw-semibold text-light">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label fw-semibold text-light">Phone Number</label>
+            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+          </div>
+          <div class="col-md-6">
+            <label for="address" class="form-label fw-semibold text-light">Address</label>
+            <input type="text" id="address" class="form-control" placeholder="Enter your address">
+          </div>
+          <div class="col-12">
+            <label for="message" class="form-label fw-semibold text-light">Message</label>
+            <textarea id="message" rows="4" class="form-control" placeholder="Write your message here..."></textarea>
+          </div>
+          <div class="col-12 text-center mt-4">
+            <button type="submit" class="btn btn-warning fw-bold px-5 py-2 shadow-lg hover-glow">
+              Submit ✉️
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
