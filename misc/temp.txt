@@ -1,0 +1,47 @@
+Subject: YOUR ACCOUNT HAS BEEN LOCKED!
+
+Dear Valued Customer,
+
+We have detected unusual activity on your bank account. For your security, we have temporarily locked your account.
+
+To unlock it immediately, please click the link below and verify your identity:
+
+🔗 http://secure-verify-bank.xyz/verify
+
+Failure to do so within 24 hours will result in permanent suspension of your account.
+
+If this was not you, please confirm your full name, date of birth, and online banking password so we can secure your account.
+
+Sincerely,
+Security Department
+National Bank Support Team
+
+
+
+
+
+
+>>>>>>>>>>>>>
+Subject: Your Weekly Project Update – June 20
+
+Hi Team,
+
+Just a quick update on where we stand with the Q3 marketing campaign rollout:
+
+All creative assets have been approved and uploaded to the shared drive.
+
+The email blast is scheduled for this Thursday at 10:00 AM EST.
+
+Social media posts are drafted and pending final review from Jessica.
+
+We're still waiting on the budget approval from finance — I'll follow up tomorrow.
+
+Could everyone please review the attached timeline and add any blocking issues to the shared tracker by EOD Tuesday?
+
+Let me know if you have any questions!
+
+Best,
+Michael Chen
+Project Lead
+m.chen@company.com
+(555) 234-5678
