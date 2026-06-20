@@ -1,4 +1,4 @@
-# 📧 Spam Detection
+# 📧 Message Spam Detection
 
 An intelligent **Spam Detection Web Application** built with **Python** and **Flask** that uses **Machine Learning** and **Natural Language Processing (NLP)** to classify text messages or emails as **Spam** or **Not Spam (Ham)**. The application helps users quickly identify unwanted or malicious messages through an easy-to-use web interface.
 
